@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 256">
+  <defs>
+    <linearGradient id="joy-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"></stop>
+      <stop offset="100%" stop-color="#0891b2"></stop>
+    </linearGradient>
+
+    <linearGradient id="joy-red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef4444"></stop>
+      <stop offset="100%" stop-color="#dc2626"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Joy-Con -->
+  <g transform="translate(40,28)">
+    <rect width="80" height="200" rx="40" fill="url(#joy-blue)"></rect>
+    <circle cx="40" cy="30" r="15" fill="rgba(255,255,255,0.3)"></circle>
+    <rect x="30" y="160" width="20" height="20" rx="4" fill="rgba(255,255,255,0.2)"></rect>
+  </g>
+
+  <!-- Right Joy-Con -->
+  <g transform="translate(180,28)">
+    <rect width="80" height="200" rx="40" fill="url(#joy-red)"></rect>
+    <circle cx="40" cy="30" r="15" fill="rgba(255,255,255,0.3)"></circle>
+    <rect x="30" y="160" width="20" height="20" rx="4" fill="rgba(255,255,255,0.2)"></rect>
+  </g>
+</svg>
