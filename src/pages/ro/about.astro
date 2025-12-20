@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AnimatedSection from '../../components/AnimatedSection';
+import { translations } from '../../i18n';
+
+const t = translations.ro;
+---
+
+<Layout 
+  title="Despre | Joy-Con Lab" 
+  description="Află despre Joy-Con Lab - experți în modare Nintendo Switch în București, România."
+  lang="ro"
+  translations={t}
+>
+  <AnimatedSection client:load>
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h1 class="fade-in-left">{t.about.title}</h1>
+            <p class="fade-in-left stagger-1">{t.about.p1}</p>
+            <p class="fade-in-left stagger-2">{t.about.p2}</p>
+            <div class="about-stats">
+              {t.about.stats.map((stat, index) => (
+                <div class={`stat fade-in stagger-${index + 1}`}>
+                  <div class="stat-number" data-count={stat.value} data-suffix={stat.suffix}>0</div>
+                  <div class="stat-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="about-image fade-in-right">
+            <div class="about-visual">
+              <div class="joycon-left"></div>
+              <div class="joycon-right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </AnimatedSection>
+</Layout>

@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/ServiceCard';
+import AnimatedSection from '../../components/AnimatedSection';
+import { translations } from '../../i18n';
+
+const t = translations.ro;
+---
+
+<Layout 
+  title="Servicii | Joy-Con Lab" 
+  description="Servicii profesionale de modare Nintendo Switch. Instalare HWFLY, PicoFly, reparații Joy-Con, mentenanță termică."
+  lang="ro"
+  translations={t}
+>
+  <AnimatedSection client:load>
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="fade-in">{t.services.title}</h1>
+          <p class="fade-in stagger-1">{t.services.subtitle}</p>
+        </div>
+        <div class="services-grid">
+          {t.services.items.map((service, index) => (
+            <ServiceCard 
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              features={service.features}
+              index={index}
+              client:visible
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  </AnimatedSection>
+</Layout>

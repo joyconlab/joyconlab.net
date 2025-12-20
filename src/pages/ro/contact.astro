@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactCard from '../../components/ContactCard';
+import AnimatedSection from '../../components/AnimatedSection';
+import { translations } from '../../i18n';
+
+const t = translations.ro;
+---
+
+<Layout 
+  title="Contact | Joy-Con Lab" 
+  description="Contactează Joy-Con Lab pentru servicii de modare Nintendo Switch în București, România."
+  lang="ro"
+  translations={t}
+>
+  <AnimatedSection client:load>
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="fade-in">{t.contact.title}</h1>
+          <p class="fade-in stagger-1">{t.contact.subtitle}</p>
+        </div>
+        <div class="contact-grid">
+          <ContactCard 
+            icon="✉️"
+            title={t.contact.email}
+            content="contact@joyconlab.net"
+            href="mailto:contact@joyconlab.net"
+            index={0}
+            client:visible
+          />
+          <ContactCard 
+            icon="📸"
+            title={t.contact.instagram}
+            content="@joyconlab"
+            href="https://instagram.com/joyconlab"
+            isExternal={true}
+            index={1}
+            client:visible
+          />
+          <ContactCard 
+            icon="📍"
+            title={t.contact.location}
+            content={t.contact.locationValue}
+            index={2}
+            client:visible
+          />
+        </div>
+      </div>
+    </section>
+  </AnimatedSection>
+</Layout>
